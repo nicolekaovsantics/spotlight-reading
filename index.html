@@ -37,6 +37,31 @@
       margin-bottom: 15px;
     }
 
+    /* 冊別切換按鈕區樣式 (新加) */
+    .book-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 15px;
+    }
+
+    .book-btn {
+      padding: 8px 24px;
+      font-size: 1rem;
+      font-weight: bold;
+      border: 2px solid var(--primary-color);
+      background-color: white;
+      color: var(--primary-color);
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .book-btn.active {
+      background-color: var(--primary-color);
+      color: white;
+    }
+
     /* 單元選擇器樣式 */
     .unit-selector-container {
       text-align: center;
@@ -193,26 +218,33 @@
 <div class="container">
   <h1 id="unitTitle">Spotlight on Reading 英文測驗</h1>
 
-  <!-- 16 課選單區塊 -->
+  <!-- 雙層選單區塊：冊別 + 課別 -->
   <div class="unit-selector-container">
+    <!-- 1. 冊別頁籤 (Book 1 / Book 2) -->
+    <div class="book-tabs">
+      <button type="button" class="book-btn active" id="btnBook1" onclick="switchBook(1)">Book 1</button>
+      <button type="button" class="book-btn" id="btnBook2" onclick="switchBook(2)">Book 2</button>
+    </div>
+
+    <!-- 2. 課別選擇選單 -->
     <label for="unitSelect">📖 請選擇測驗單元：</label>
     <select id="unitSelect" onchange="switchUnit(this.value)">
-      <option value="1">Unit 1: My family</option>
-      <option value="2">Unit 2: Follow the Rules</option>
-      <option value="3">Unit 3: A Nice Trip</option>
-      <option value="4">Unit 4: Sports</option>
-      <option value="5">Unit 5: The Concert</option>
-      <option value="6">Unit 6: Keeping Animals Safe</option>
-      <option value="7">Unit 7: Daily Life</option>
-      <option value="8">Unit 8: My Meals</option>
-      <option value="9">Unit 9: After-School Activities</option>
-      <option value="10">Unit 10: At the Pet Store</option>
-      <option value="11">Unit 11: A Costume Party</option>
-      <option value="12">Unit 12: A Bad Dream</option>
-      <option value="13">Unit 13: Using Apps for Traveling</option>
-      <option value="14">Unit 14: Shopping at the Supermarket</option>
-      <option value="15">Unit 15: Best Friends</option>
-      <option value="16">Unit 16: The Most Popular Pets</option>
+      <option value="1">Unit 1</option>
+      <option value="2">Unit 2</option>
+      <option value="3">Unit 3</option>
+      <option value="4">Unit 4</option>
+      <option value="5">Unit 5</option>
+      <option value="6">Unit 6</option>
+      <option value="7">Unit 7</option>
+      <option value="8">Unit 8</option>
+      <option value="9">Unit 9</option>
+      <option value="10">Unit 10</option>
+      <option value="11">Unit 11</option>
+      <option value="12">Unit 12</option>
+      <option value="13">Unit 13</option>
+      <option value="14">Unit 14</option>
+      <option value="15">Unit 15</option>
+      <option value="16">Unit 16</option>
     </select>
   </div>
 
@@ -250,6 +282,22 @@
 </div>
 
 <script>
+  // 當前選擇的冊別 (預設 Book 1)
+  let currentBook = 1;
+
+  // 切換冊別 (Book 1 / Book 2)
+  function switchBook(bookNum) {
+    currentBook = bookNum;
+    
+    // 更新按鈕樣式
+    document.getElementById("btnBook1").classList.toggle("active", bookNum === 1);
+    document.getElementById("btnBook2").classList.toggle("active", bookNum === 2);
+
+    // 重新載入當前下拉選單所選的 Unit 題目
+    const currentUnit = document.getElementById("unitSelect").value;
+    switchUnit(currentUnit);
+  }
+
   // 發音功能
   function speakText(text) {
     if ('speechSynthesis' in window) {
@@ -263,7 +311,9 @@
 
   // 動態切換單元 JS 檔
   function switchUnit(unitNum) {
-    // 清空目前畫面
+    // 清空目前畫面與重新顯示表單
+    document.getElementById("quizForm").classList.remove("hidden");
+    document.getElementById("resultArea").classList.add("hidden");
     document.getElementById("wordsSentencesArea").innerHTML = "";
     document.getElementById("clozeQuestions").innerHTML = "";
     document.getElementById("readingQuestions").innerHTML = "";
@@ -274,15 +324,16 @@
     const oldScript = document.getElementById("dynamicUnitScript");
     if (oldScript) oldScript.remove();
 
-    // 載入新腳本
+    // 載入新腳本 (自動判定 spotlight1 或 spotlight2 資料夾)
     const script = document.createElement("script");
     script.id = "dynamicUnitScript";
-    script.src = `data/spotlight1/unit${unitNum}.js`;
+    script.src = `data/spotlight${currentBook}/unit${unitNum}.js`;
+    
     script.onload = () => {
       renderQuiz();
     };
     script.onerror = () => {
-      alert(`Unit ${unitNum} 的題庫檔 (unit${unitNum}.js) 還沒建立喔！`);
+      alert(`Book ${currentBook} Unit ${unitNum} 的題庫檔 (data/spotlight${currentBook}/unit${unitNum}.js) 還沒建立喔！`);
     };
     document.body.appendChild(script);
   }
@@ -359,7 +410,7 @@
     }
   }
 
-  // 初始化預設載入 Unit 1
+  // 初始化預設載入 Book 1 Unit 1
   document.addEventListener("DOMContentLoaded", () => {
     switchUnit(1);
   });
