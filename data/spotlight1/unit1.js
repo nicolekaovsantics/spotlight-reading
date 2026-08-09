@@ -28,7 +28,7 @@ window.unitData = {
     { "id": "w20", "type": "context_fill", "prompt": "文意填空：The cute k_____ is only two months old.", "answer": ["kitten"] },
     { "id": "w21", "type": "context_fill", "prompt": "文意填空：Peter's teacher asks the class to d_____ a family tree.", "answer": ["draw"] },
     { "id": "w22", "type": "context_fill", "prompt": "文意填空：There are thirty students in our c_____.", "answer": ["class"] },
-    { "id": "w23", "type": "context_fill", "prompt": "文意填空：My brother Nick is a b_____. He is 1 year old.", "answer": ["baby"] },
+    { "id": "w23", "type": "context_fill", "prompt": "文意填空：My brother Nick is a b_____. He is one year old.", "answer": ["baby"] },
     { "id": "w24", "type": "context_fill", "prompt": "文意填空：Rose's family is f_____ and kind.", "answer": ["friendly"] },
     { "id": "w25", "type": "context_fill", "prompt": "文意填空：We will c_____ Grandpa's birthday on Saturday.", "answer": ["celebrate"] }
   ],
@@ -38,14 +38,14 @@ window.unitData = {
     { "id": "s2", "type": "q_and_a", "prompt": "問答題：Who is she? (提示：my aunt)", "answer": ["She is my aunt."] },
     { "id": "s3", "type": "q_and_a", "prompt": "問答題：Is Peter a teacher? (提示：簡答否定)", "answer": ["No, he isn't.", "No, he is not."] },
     { "id": "s4", "type": "q_and_a", "prompt": "問答題：Are they your classmates? (提示：簡答肯定)", "answer": ["Yes, they are."] },
-    { "id": "s5", "type": "q_and_a", "prompt": "問答題：How old is Rose's brother Nick? (提示：1 year old)", "answer": ["He is 1 year old."] },
+    { "id": "s5", "type": "q_and_a", "prompt": "問答題：How old is Rose's brother Nick? (提示：one year old)", "answer": ["He is one year old."] },
 
     // --- 四、句型練習：重組 (5題) ---
     { "id": "s6", "type": "unscramble", "prompt": "重組句子：[is] [My] [a] [father] [police officer.]", "answer": ["My father is a police officer."] },
     { "id": "s7", "type": "unscramble", "prompt": "重組句子：[grandparents] [farmers.] [are] [Her]", "answer": ["Her grandparents are farmers."] },
-    { "id": "s8", "type": "unscramble", "prompt": "重組句子：[are] [both] [12] [old.] [years] [We]", "answer": ["We are both 12 years old."] },
+    { "id": "s8", "type": "unscramble", "prompt": "重組句子：[are] [both] [twelve] [old.] [years] [We]", "answer": ["We are both twelve years old."] },
     { "id": "s9", "type": "unscramble", "prompt": "重組句子：[is] [a] [She] [great] [singer.]", "answer": ["She is a great singer."] },
-    { "id": "s10", "type": "unscramble", "prompt": "重組句子：[kittens] [are] [both] [5 months old.] [They]", "answer": ["They are both 5 months old."] },
+    { "id": "s10", "type": "unscramble", "prompt": "重組句子：[kittens] [are] [both] [five months old.] [They]", "answer": ["They are both five months old."] },
 
     // --- 五、句型練習：改寫 (5題) ---
     { "id": "s11", "type": "rewrite", "prompt": "句型改寫：My mother is a housewife. (改為否定句)", "answer": ["My mother is not a housewife.", "My mother isn't a housewife."] },
