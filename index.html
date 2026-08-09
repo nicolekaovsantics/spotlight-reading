@@ -356,9 +356,12 @@
     document.getElementById("quizForm").classList.add("hidden");
     document.getElementById("resultArea").classList.remove("hidden");
     document.getElementById("scoreText").innerText = `總分：${Math.round((correctCount / totalCount) * 100)} 分 (答對 ${correctCount} / ${totalCount} 題)`;
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+  window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 </script>
+
+<!-- 載入單元資料檔 -->
+<script src="data/spotlight1/unit1.js"></script>
 
 </body>
 </html>
