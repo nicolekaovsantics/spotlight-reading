@@ -34,7 +34,7 @@ window.unitData = {
   ],
   "sentences": [
     // --- 三、句型練習：問答 (5題，焦點：Be動詞、Wh-問句) ---
-    { "id": "s1", "type": "q_and_a", "prompt": "問答題：What is his father's job? (提示：police officer)", "answer": ["His father is a police officer.", "He is a police officer."] },
+    { "id": "s1", "type": "q_and_a", "prompt": "問答題：What is his father's job? (提示：police officer)", "answer": ["His father is a police officer.", "He is a police officer.","He's a police officer."] },
     { "id": "s2", "type": "q_and_a", "prompt": "問答題：Who is she? (提示：my aunt)", "answer": ["She is my aunt."] },
     { "id": "s3", "type": "q_and_a", "prompt": "問答題：Is Peter a teacher? (提示：簡答否定)", "answer": ["No, he isn't.", "No, he is not."] },
     { "id": "s4", "type": "q_and_a", "prompt": "問答題：Are they your classmates? (提示：簡答肯定)", "answer": ["Yes, they are."] },
@@ -45,7 +45,7 @@ window.unitData = {
     { "id": "s7", "type": "unscramble", "prompt": "重組句子：[grandparents] [farmers.] [are] [Her]", "answer": ["Her grandparents are farmers."] },
     { "id": "s8", "type": "unscramble", "prompt": "重組句子：[are] [both] [twelve] [old.] [years] [We]", "answer": ["We are both twelve years old."] },
     { "id": "s9", "type": "unscramble", "prompt": "重組句子：[is] [a] [She] [great] [singer.]", "answer": ["She is a great singer."] },
-    { "id": "s10", "type": "unscramble", "prompt": "重組句子：[kittens] [are] [both] [five months old.] [They]", "answer": ["They are both five months old."] },
+    { "id": "s10", "type": "unscramble", "prompt": "重組句子：[kittens] [are] [both] [five months old.] [The]", "answer": ["The kittens are both five months old."] },
 
     // --- 五、句型練習：改寫 (5題) ---
     { "id": "s11", "type": "rewrite", "prompt": "句型改寫：My mother is a housewife. (改為否定句)", "answer": ["My mother is not a housewife.", "My mother isn't a housewife."] },
